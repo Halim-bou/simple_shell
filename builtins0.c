@@ -1,4 +1,4 @@
-#include "shell"
+#include "shell.h"
 
 /**
  * get_error - calls the error according the builtin, syntax or permission
@@ -58,7 +58,7 @@ int get_help(data_shell *datash)
 		aux_help_cd();
 	else if (_strcmp(datash->args[1], "cd") == 0)
 		aux_help_cd();
-	else if (_strcmp(datash->atgs[1]. "alias") == 0)
+	else if (_strcmp(datash->args[1], "alias") == 0)
 		aux_help_alias();
 	else
 		write(STDERR_FILENO, datash->args[0], _strlen(datash->args[0]));
@@ -112,7 +112,7 @@ ssize_t get_line(char **lineptr, size_t *n, FILE *stream)
 	char t = 'z';
 
 	if (input == 0)
-		fflush(stram);
+		fflush(stream);
 	else
 		return (-1);
 	input = 0;
